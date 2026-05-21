@@ -14,19 +14,27 @@
  """
 
 branch_count = int(input("Nhập số lượng chi nhánh: "))
-month_count = 3
+class_count = int(input("Nhập số lớp học của mỗi chi nhánh: "))
 
+all_students = 0  
 
 for branch in range(1, branch_count + 1):
 
-    for month in range(1, month_count + 1):
+    print(f"\nChi nhánh {branch}")
 
-        revenue = int(
-            input(f"Nhập doanh thu Chi nhánh {branch}, tháng {month}: ")
+    total_students = 0
+
+    for classroom in range(1, class_count + 1):
+
+        student_count = int(
+            input(f"Nhập số học viên lớp {classroom}: ")
         )
-    print("\n-------------- Kết quả --------------")
-    
-    for month in range(1, month_count + 1):
 
-        print(f"Chi nhánh {branch}, tháng {month}: "
-              f"{revenue} triệu đồng")
+        total_students += student_count
+
+    print(f"Chi nhánh {branch}: "
+          f"{total_students} học viên")
+
+    all_students += total_students   
+
+print(f"Tổng số học viên của tất cả chi nhánh: {all_students}")
